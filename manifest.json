@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "Fisherman",
+    "version": "1.0",
+    "description":"Checks for phishing links",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "https://example.com/api/*"
+    ]
+}
