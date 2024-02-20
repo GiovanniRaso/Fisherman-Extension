@@ -1,0 +1,99 @@
+:root {
+    /* Light theme colors */
+    --background-color: #FFFFFF; /* White background */
+    --text-color: #000000; /* Black text */
+    --button-bg: #4CAF50; /* Green button background */
+    --button-text: #FFFFFF; /* White button text */
+    --input-border: #ccc; /* Light grey input border */
+
+    /* Dark theme colors */
+    --background-color-dark: #333333; /* Dark grey background */
+    --text-color-dark: #FFFFFF; /* White text */
+    --button-bg-dark: #4CAF50; /* Green button background (same as light) */
+    --button-text-dark: #FFFFFF; /* White button text (same as light) */
+    --input-border-dark: #ffffff; /* Darker grey input border */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    width: 350px; /* Adjust the width of the popup */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
+}
+
+.wrapper {
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    background-color: var(--background-color); /* Or any background color you prefer */
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+button {
+    width: 80px;
+    padding: 5px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for theme change */
+}
+
+button.theme{
+    width: 20px;
+    padding: 5px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for theme change */
+}
+
+/* Dark mode specific styles */
+body.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .wrapper,
+body.dark-mode input[type="text"],
+body.dark-mode button {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-mode input[type="text"] {
+    border-color: var(--input-border-dark);
+}
+
+body.dark-mode button {
+    background-color: var(--button-bg-dark);
+}
+body.dark-mode h1 {
+    color: var(--text-color-dark); /* Dark mode color */
+}
