@@ -1,12 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     var checkButton = document.getElementById('checkButton');
     checkButton.addEventListener('click', function() {
-        var url = document.getElementById('linkInput').value;
-
-        checkLink(url);
-    }, false);
+        const url = document.getElementById('linkInput').value;
+        if(linkInput){
+            checklink(url);
+        } else {
+            document.getElementById('result').innerHTML = "Enter a URL";
+        }
+    });
 });
-// make checkLink function
+function checklink(url){
+    const apiKey = "Your API Key";
+    const safeBrowsingURL = "" ;
+    
+}
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const toggleThemeButton = document.getElementById('toggleTheme');
