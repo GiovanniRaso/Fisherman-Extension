@@ -97,3 +97,15 @@ body.dark-mode button {
 body.dark-mode h1 {
     color: var(--text-color-dark); /* Dark mode color */
 }
+#result p {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#result p[style*="color: red;"] {
+    background-color: #FFEBEE; 
+}
+
+#result p[style*="color: green;"] {
+    background-color: #E8F5E9;
+}

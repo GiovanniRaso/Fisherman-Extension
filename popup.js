@@ -38,7 +38,9 @@ function checklink(url){
                 const resultElement = document.getElementById('result');
 
                 if (maliciousCount > 0) {
-                    resultElement.textContent = 'Warning: This URL may be harmful.';
+                    resultElement.innerHTML = `<p style="color: red;">Warning: This URL has been flagged as harmful by ${maliciousCount} sources.</p>`;
+                } else if (harmlessCount > 0 && undetectedCount > 0) {
+                    resultElement.innerHTML = `<p style="color: green;">This URL appears to be safe, but always stay vigilant.</p>`;
                 } else {
                     resultElement.textContent = 'This URL appears to be safe.';
                 }
