@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(linkInput){
             checklink(url);
         } else {
-            document.getElementById('result').innerHTML = "Enter a URL";
+            document.getElementById('result').textContent = "Enter a URL";
         }
     });
 });
@@ -25,14 +25,30 @@ function checklink(url){
         body: JSON.stringify({
             "url": urlBase64
         })
-        .then(response => response.json())
+        .then(response => {
+            if (response.status === 429) {
+                throw new Error('Rate limit exceeded. Please try again later.');
+            }
+            response.json()})
         .then(data => {
-            console.log(data);
-            document.getElementById('result').innerHTML = 'URL check complete';
+            if (data && data.data && data.data.attributes && data.data.attributes.last_analysis_stats) {
+                const stats = data.data.attributes.last_analysis_stats;
+                const maliciousCount = stats.malicious;
+            
+                const resultElement = document.getElementById('result');
+
+                if (maliciousCount > 0) {
+                    resultElement.textContent = 'Warning: This URL may be harmful.';
+                } else {
+                    resultElement.textContent = 'This URL appears to be safe.';
+                }
+            } else {
+                document.getElementById('result').textContent = 'No data available.';
+            }
         })
         .catch((error) => {
             console.error('Error:', error);
-            document.getElementById('result').innerHTML = 'Error';
+            document.getElementById('result').textContent = 'Error';
         })
     })
     
