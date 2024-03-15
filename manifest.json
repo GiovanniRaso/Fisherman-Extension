@@ -9,6 +9,6 @@
     "permissions": [
         "activeTab",
         "storage",
-        "https://example.com/api/*"
+        "'https://www.virustotal.com/api/v3/urls'"
     ]
 }
