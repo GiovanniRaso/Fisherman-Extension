@@ -10,5 +10,9 @@
         "activeTab",
         "storage",
         "'https://www.virustotal.com/api/v3/urls'"
-    ]
+    ],
+
+    "background": {
+        "service_worker": "background.js"
+    }
 }
