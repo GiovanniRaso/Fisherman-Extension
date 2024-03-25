@@ -2,17 +2,15 @@
     "manifest_version": 3,
     "name": "Fisherman",
     "version": "1.0",
-    "description":"Checks for phishing links",
+    "description": "Checks for phishing links via a server-side API",
     "action": {
-        "default_popup": "popup.html"
+      "default_popup": "popup.html"
     },
     "permissions": [
-        "activeTab",
-        "storage",
-        "'https://www.virustotal.com/api/v3/urls'"
+      "activeTab"
     ],
-
-    "background": {
-        "service_worker": "background.js"
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
     }
-}
+  }
+  
