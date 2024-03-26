@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Fisherman",
+    "version": "1.0",
+    "description": "Checks for phishing links via a server-side API",
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+      "activeTab"
+    ],
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+  }
+  

@@ -97,3 +97,29 @@ body.dark-mode button {
 body.dark-mode h1 {
     color: var(--text-color-dark); /* Dark mode color */
 }
+#result p {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#result p[style*="color: red;"] {
+    background-color: #FFEBEE; 
+}
+
+#result p[style*="color: green;"] {
+    background-color: #E8F5E9;
+}
+.url-safe {
+    background-color: lightgreen;
+    color: black;
+}
+
+.url-unsafe {
+    background-color: lightcoral;
+    color: white;
+}
+
+.url-suspicious {
+    background-color: yellow;
+    color: black; /* Adjust text color as needed for readability */
+}
