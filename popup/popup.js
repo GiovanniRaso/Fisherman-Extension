@@ -1,31 +1,31 @@
 document.getElementById('checkButton').addEventListener('click', function() {
     const url = document.getElementById('linkInput').value;
-    if(url) {
-        fetch('http://localhost:8000/check-url', { // Adjust as necessary
+    if (url) {
+        fetch('http://localhost:8000/check-url', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ url: url })
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             const resultElement = document.getElementById('result');
-            // Ensure you clear previous styles with each check
-            resultElement.style.backgroundColor = ''; 
-            resultElement.style.color = '';
-            // Update based on hypothetical response handling
-            if (data.safe) {
-                resultElement.textContent = 'The URL is safe.';
-                resultElement.className = 'url-safe';
-            } else {
+            // Reset previous styles
+            resultElement.className = ''; 
+
+            if (data.overall_result === "malicious") {
                 resultElement.textContent = 'Caution: This URL may be harmful.';
-                resultElement.className = 'url-unsafe';
+                resultElement.className = 'url-unsafe'; // Apply styling for malicious URLs
+            } else {
+                resultElement.textContent = 'The URL is safe.';
+                resultElement.className = 'url-safe'; // Apply styling for safe URLs
             }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('result').textContent = 'Error retrieving analysis.';
+        });
     }
 });
-
 
     
 

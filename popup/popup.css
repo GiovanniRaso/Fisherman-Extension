@@ -118,3 +118,8 @@ body.dark-mode h1 {
     background-color: lightcoral;
     color: white;
 }
+
+.url-suspicious {
+    background-color: yellow;
+    color: black; /* Adjust text color as needed for readability */
+}
