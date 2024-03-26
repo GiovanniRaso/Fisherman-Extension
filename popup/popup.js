@@ -1,7 +1,7 @@
 document.getElementById('checkButton').addEventListener('click', function() {
     const url = document.getElementById('linkInput').value;
     if(url) {
-        fetch('http://localhost:5000/check-url', { // Adjust as necessary
+        fetch('http://localhost:8000/check-url', { // Adjust as necessary
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ url: url })
