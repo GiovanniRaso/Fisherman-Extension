@@ -1,7 +1,12 @@
 from django.http import JsonResponse
 from .models import UrlData
+import logging
+
+logger = logging.getLogger(__name__)
 
 def check_url(request):
+    # checking to make sure a log happen from call
+    logger.info("Received request for URL check.")
     # Get the URL parameter from the request
     url_to_check = request.GET.get('url', '')
 
